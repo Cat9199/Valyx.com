@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You For Your Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .header i {
+            font-size: 60px;
+            color: #3ba55c;
+            margin-right: 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin: 0;
+        }
+        
+        .subheading {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .sheep {
+            position: absolute;
+            bottom: -50px;
+            left: -200px;
+            animation: moveSheep 20s linear infinite;
+        }
+        
+        @keyframes moveSheep {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(1000px);
+            }
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3ba55c;
+            color: #fff;
+            font-size: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #2e8545;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-check-circle"></i>
+            <h1>Thank You For Your Order</h1>
+        </div>
+        <p class="subheading">Your order is now being processed and will be shipped soon. You will receive an email with the shipping details once your order has been shipped. </p>
+        <p class="subheading">Thank you for shopping with us!</p>
+        <div class="sheep">
+            <img src="sheep.png" alt="sheep">
+        </div>
+        <div class="button-container">
+            <a href="/" class="btn">Go to Home</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

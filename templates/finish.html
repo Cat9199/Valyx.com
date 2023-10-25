@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order Summary</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        header {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        
+        main {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        section img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+        
+        section h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        section p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .total {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .total span {
+            margin-left: 20px;
+            color: #333;
+        }
+        
+        .address {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .address h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .address p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Order Summary</h1>
+    </header>
+    <main>
+        {% for pro in p%}
+        <section>
+            <img src="{{ url_for('img', img_id=pro.pid) }}" width='150px' alt="Product Image">
+            <div>
+                <h2>{{ pro.name}}</h2>
+                <p>Size: {{pro.sizes}}</p>
+                <p>Price:{{pro.price}}L.E</p>
+                <p>Quantity: 1</p>
+            </div>
+        </section>
+        {% endfor %}
+        <div class="total">
+            <span>Total: {{ info.Total_bill }}L.E</span>
+        </div>
+        <div class="address">
+            <h2>{{info.firstName}} {{info.lastName}}</h2>
+            <p>{{info.phon}}</p>
+            <p>{{info.address}}</p>
+            <p>{{ info.created_at }}</p>
+
+        </div>
+    </main>
+</body>
+
+</html>
